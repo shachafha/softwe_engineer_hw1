@@ -1,0 +1,129 @@
+8
+42
+1
+6
+add player Avi red
+end
+add player David yellow
+end
+42
+NONE
+add player David yellow
+end
+add player Avi red
+add ladder 10 98
+add snake 5 2
+add player Avi green
+add player Avi red
+add ladder 5 103
+add ladder 103 103
+add snake 5 103
+add snake 103 103
+end
+2103
+NONE
+add ladder 21 4
+add ladder 33 13
+add ladder 16 33
+add ladder 21 42
+add ladder 19 50
+add ladder 19 62
+add ladder 18 74
+add snake 58 99
+add snake 36 89
+add snake 18 76
+add snake 21 66
+add snake 21 52
+add snake 25 43
+add snake 37 40
+add snake 22 27
+add player Shahar green
+add player Niv orange
+end
+2345
+NONE
+add ladder 21 4
+add ladder 33 13
+add ladder 16 33
+add ladder 21 42
+add ladder 19 50
+add ladder 19 62
+add ladder 80 62
+add ladder 10 62
+add ladder 18 74
+add snake 58 99
+add snake 36 89
+add snake 18 76
+add snake 21 66
+add snake 21 54
+add snake 25 43
+add snake 37 40
+add snake 22 27
+add ladder 7 54
+add player Shahar green
+add player Niv orange
+end
+42
+-3
+10
+add ladder 21 4
+add ladder 33 13
+add ladder 16 33
+add ladder 21 42
+add ladder 19 50
+add ladder 19 62
+add ladder 80 62
+add ladder 10 62
+add ladder 18 74
+add snake 58 99
+add snake 36 89
+add snake 18 76
+add snake 21 66
+add snake 21 54
+add snake 25 43
+add snake 37 40
+add snake 22 27
+add ladder 7 54
+add player Shahar green
+add player Niv orange
+end
+42
+-5
+-2
+add ladder 99 1
+add player Shimon green
+add player Amit yellow
+end
+42
+-3
+10
+add ladder 21 4
+add ladder 33 13
+add ladder 16 33
+add ladder 21 42
+add ladder 19 50
+add ladder 19 62
+add ladder 80 62
+add ladder 10 62
+add ladder 18 74
+add snake 58 99
+add snake 36 89
+add snake 18 76
+add snake 21 66
+add snake 21 54
+add snake 25 43
+add snake 37 40
+add snake 22 27
+add ladder 7 54
+add ladder 1 49
+add player Shahar green
+add player Niv orange
+add snake 38 92
+end
+1709
+-7
+6
+add player Avi red
+end
+add player David yellow
+end
