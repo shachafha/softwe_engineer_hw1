@@ -11,7 +11,7 @@ public class Player {
         return name;
     }
 
-    public Main.Color getColor() {
-        return playerGamePiece.getColor();
+    public GamePiece getGamePiece() {
+        return playerGamePiece;
     }
 }
