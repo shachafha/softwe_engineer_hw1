@@ -6,8 +6,8 @@ public class GameBoard {
     private Square[] board;
 
     public GameBoard(){
-        board = new Square[BOARD_HEIGHT*BOARD_WIDTH+1];
-        for (int i=1;i<=BOARD_HEIGHT*BOARD_WIDTH+1;i++)
+        board = new Square[(BOARD_HEIGHT*BOARD_WIDTH)+1];
+        for (int i=1;i<BOARD_HEIGHT*BOARD_WIDTH+1;i++)
             board[i] = new Square(i);
     }
 
