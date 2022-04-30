@@ -1,4 +1,3 @@
-import java.util.Objects;
 
 public class SnakesAndLaddersGame {
     final int MAX_PLAYERS = 5;
