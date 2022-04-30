@@ -3,6 +3,11 @@ public class Player {
     private GamePiece playerGamePiece;
     private int location;
 
+    /**
+     * Player constructor
+     * @param name player's name.
+     * @param color the game piece color of the player
+     */
     public Player(String name, Color color) {
         this.name = name;
         this.playerGamePiece = new GamePiece(color);

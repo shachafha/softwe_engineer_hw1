@@ -5,6 +5,10 @@ public class GameBoard {
     static final int BOARD_LAST_SQUARE = 100;
     private Square[] board;
 
+    /**
+     * creates board which is an array of 101 squares,
+     * we use only from indexes 1-100 for convenience
+     */
     public GameBoard() {
         board = new Square[(BOARD_HEIGHT * BOARD_WIDTH) + 1];
         for (int i = 1; i < BOARD_HEIGHT * BOARD_WIDTH + 1; i++)

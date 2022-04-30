@@ -24,13 +24,13 @@ public class Square {
     public void setLadder(int length) {
         this.isLadder = true;
         this.ladder = new Ladder(length, this.squareNumber);
-        this.squareGoTo += length;
+        this.squareGoTo += this.ladder.getLadderLength();
     }
 
     public void setSnake(int length) {
         this.isSnake = true;
         this.snake = new Snake(length, this.squareNumber);
-        this.squareGoTo -= length;
+        this.squareGoTo -= this.snake.getSnakeLength();
     }
 
     public int getSquareGoTo() {
