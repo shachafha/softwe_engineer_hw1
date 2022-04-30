@@ -27,7 +27,7 @@ public class SnakesAndLaddersGame {
             if (userInput.startsWith("add player ")) {
                 userInput = userInput.substring(11);
                 if (addPlayer(userInput.substring(0, userInput.indexOf(" ")),
-                        Main.Color.valueOf(userInput.substring(userInput.indexOf(" ") + 1).toUpperCase()))) {
+                        Color.valueOf(userInput.substring(userInput.indexOf(" ") + 1).toUpperCase()))) {
                     countPlayers++;
                 }
             } else if (userInput.startsWith("add ladder ")) {
@@ -48,9 +48,9 @@ public class SnakesAndLaddersGame {
 
     }
 
-    public boolean addPlayer(String name, Main.Color color) {
+    public boolean addPlayer(String name, Color color) {
         int i = 0;
-        int emmptyLocation = NO_LOCATION_TO_PLACE;
+        int emptyLocation = NO_LOCATION_TO_PLACE;
         boolean nameTaken = false, colorTaken = false;
         for (; i < MAX_PLAYERS; i++) {
             if (this.players[i] != null) {
@@ -59,16 +59,16 @@ public class SnakesAndLaddersGame {
                 if (this.players[i].getGamePiece().getColor() == color)
                     colorTaken = true;
             } else {
-                emmptyLocation = i;
+                emptyLocation = i;
                 break;
             }
 
         }
-        if (emmptyLocation != NO_LOCATION_TO_PLACE && !nameTaken && !colorTaken) {
-            this.players[emmptyLocation] = new Player(name, color);
+        if (emptyLocation != NO_LOCATION_TO_PLACE && !nameTaken && !colorTaken) {
+            this.players[emptyLocation] = new Player(name, color);
             return true;
         }
-        if (emmptyLocation == NO_LOCATION_TO_PLACE)
+        if (emptyLocation == NO_LOCATION_TO_PLACE)
             System.out.println("The maximal number of players is five !");
         if (nameTaken && colorTaken)
             System.out.println("The name and the color are already taken!");
@@ -127,13 +127,16 @@ public class SnakesAndLaddersGame {
         int roll;
         while (winner.equals("")) {
             System.out.println("------------------------- Round number " + round + " -------------------------");
-            System.out.println("Players positions on the board:");
+
             for (int i = 0; i < this.numOfPlayers(); i++) {
                 roll = this.gameDie.Roll();
                 if (updateMove(players[i], roll)) {
                     winner = players[i].getName();
                 }
-                System.out.println(players[i].getName()+" is in square number "+players[i].getLocation());
+            }
+            System.out.println("\nPlayers positions on the board:");
+            for (int i = 0; i < this.numOfPlayers(); i++) {
+                System.out.println(players[i].getName() + " is in square number " + players[i].getLocation());
 
             }
             round++;
@@ -152,14 +155,14 @@ public class SnakesAndLaddersGame {
         } else {
             newLocation = roll + currentLocation;
         }
+        System.out.print(player.getName() + " rolled " + roll + ". The path to the next square: " + currentLocation+" -> " + newLocation);
         while (gameBoard.getBoard()[newLocation].getIsLadder() || gameBoard.getBoard()[newLocation].getIsSnake()) {
             newLocation = gameBoard.getBoard()[newLocation].getSquareGoTo();
+            System.out.print(" -> " + newLocation);
         }
+        System.out.println();
         player.setLocation(newLocation);
-        System.out.println(player.getName() + " rolled " + roll + ". The path to the next square: " + currentLocation + " -> "+newLocation);
-        if (newLocation == GameBoard.BOARD_LAST_SQUARE)
-            return true;
-        return false;
+        return newLocation == GameBoard.BOARD_LAST_SQUARE;
 
 
     }

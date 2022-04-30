@@ -3,7 +3,7 @@ public class Player {
     private GamePiece playerGamePiece;
     private int location;
 
-    public Player(String name, Main.Color color) {
+    public Player(String name, Color color) {
         this.name = name;
         this.playerGamePiece = new GamePiece(color);
         this.location = 1;

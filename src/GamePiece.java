@@ -1,10 +1,10 @@
 public class GamePiece {
-    private Main.Color color;
-    public GamePiece(Main.Color color){
+    private Color color;
+    public GamePiece(Color color){
         this.color = color;
     }
 
-    public Main.Color getColor() {
+    public Color getColor() {
         return color;
     }
 }

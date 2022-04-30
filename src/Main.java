@@ -7,13 +7,7 @@ public class Main {
     public static Random rnd;       // Note: Do not change this line.
     public static Scanner scanner;  // Note: Do not change this line.
 
-    public static enum Color {
-        RED,
-        BLUE,
-        GREEN,
-        YELLOW,
-        ORANGE
-    }
+
 
     public static void main(String[] args) throws IOException {
         String path = args[0];
