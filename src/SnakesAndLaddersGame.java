@@ -44,10 +44,10 @@ public class SnakesAndLaddersGame {
                 userInput = Main.scanner.nextLine();
             }
         }
-
+        this.arrangePlayers();
     }
 
-    public boolean addPlayer(String name, Color color) {
+    private boolean addPlayer(String name, Color color) {
         int i = 0;
         int emptyLocation = NO_LOCATION_TO_PLACE;
         boolean nameTaken = false, colorTaken = false;
@@ -79,7 +79,7 @@ public class SnakesAndLaddersGame {
 
     }
 
-    public void addLadder(int length, int squareNumber) {
+    private void addLadder(int length, int squareNumber) {
         if (squareNumber > GameBoard.BOARD_LAST_SQUARE || squareNumber < GameBoard.BOARD_FIRST_SQUARE) {
             System.out.println("The square is not within the board's boundaries!");
         } else if (squareNumber + length > GameBoard.BOARD_LAST_SQUARE) {
@@ -94,7 +94,7 @@ public class SnakesAndLaddersGame {
 
     }
 
-    public void addSnake(int length, int squareNumber) {
+    private void addSnake(int length, int squareNumber) {
         if (squareNumber > GameBoard.BOARD_LAST_SQUARE || squareNumber < GameBoard.BOARD_FIRST_SQUARE) {
             System.out.println("The square is not within the board's boundaries!");
         } else if (squareNumber == GameBoard.BOARD_LAST_SQUARE) {
@@ -130,7 +130,10 @@ public class SnakesAndLaddersGame {
             for (int i = 0; i < this.numOfPlayers(); i++) {
                 roll = this.gameDie.Roll();
                 if (updateMove(players[i], roll)) {
-                    winner = players[i].getName();
+                    {
+                        winner = players[i].getName();
+                        break;
+                    }
                 }
             }
             System.out.println("\nPlayers positions on the board:");
@@ -144,7 +147,7 @@ public class SnakesAndLaddersGame {
 
     }
 
-    public boolean updateMove(Player player, int roll) {
+    private boolean updateMove(Player player, int roll) {
         int currentLocation = player.getLocation();
         int newLocation = 0;
         if (roll + currentLocation > GameBoard.BOARD_LAST_SQUARE) {
@@ -154,7 +157,7 @@ public class SnakesAndLaddersGame {
         } else {
             newLocation = roll + currentLocation;
         }
-        System.out.print(player.getName() + " rolled " + roll + ". The path to the next square: " + currentLocation+" -> " + newLocation);
+        System.out.print(player.getName() + " rolled " + roll + ". The path to the next square: " + currentLocation + " -> " + newLocation);
         while (gameBoard.getBoard()[newLocation].getIsLadder() || gameBoard.getBoard()[newLocation].getIsSnake()) {
             newLocation = gameBoard.getBoard()[newLocation].getSquareGoTo();
             System.out.print(" -> " + newLocation);
@@ -164,5 +167,31 @@ public class SnakesAndLaddersGame {
         return newLocation == GameBoard.BOARD_LAST_SQUARE;
 
 
+    }
+
+    private void arrangePlayers() {
+        int num = this.numOfPlayers();
+        for (int i = num - 1; i > 0; i--) {
+            swapPlayers(i, findMax(i));
+        }
+    }
+
+    private int findMax(int end) {
+        String max = this.players[0].getName();
+        int location = 0;
+        for (int i = 1; i <= end; i++) {
+            if (this.players[i].getName().compareTo(max) > 0) {
+                max = this.players[i].getName();
+                location = i;
+            }
+        }
+        return location;
+
+    }
+
+    private void swapPlayers(int player1Location, int player2Location) {
+        Player playerTemp = this.players[player1Location];
+        this.players[player1Location] = this.players[player2Location];
+        this.players[player2Location] = playerTemp;
     }
 }
