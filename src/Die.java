@@ -3,17 +3,19 @@ public class Die {
     private int maxRange;
 
     /**
-     * Die constructor
-     * @param min minimum die range
-     * @param max maximum die range
+     * Die constructor.
+     *
+     * @param min minimum die range.
+     * @param max maximum die range.
      */
     public Die(int min, int max) {
         this.minRange = min;
         this.maxRange = max;
     }
+
     /**
      * Die constructor without params,
-     * uses the above constructor with default parameters
+     * uses the above constructor with default parameters.
      */
     public Die() {
         this(1, 6);
@@ -21,8 +23,9 @@ public class Die {
     }
 
     /**
-     * Uses main.rnd.nextInt to create a random number
-     * @return random number between this.minRange and this.maxRange
+     * Uses main.rnd.nextInt to create a random number.
+     *
+     * @return random number between this.minRange and this.maxRange.
      */
     public int Roll() {
 

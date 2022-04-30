@@ -3,7 +3,7 @@ public class Ladder {
     private int ladderSquareNumber;
 
     /**
-     * ladder constructor
+     * Ladder constructor.
      */
     public Ladder(int ladderLength, int ladderSquareNumber) {
         this.ladderLength = ladderLength;

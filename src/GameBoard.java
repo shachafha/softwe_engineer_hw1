@@ -6,8 +6,8 @@ public class GameBoard {
     private Square[] board;
 
     /**
-     * creates board which is an array of 101 squares,
-     * we use only from indexes 1-100 for convenience
+     * Creates board which is an array of 101 squares,
+     * we use only from indexes 1-100 for convenience.
      */
     public GameBoard() {
         board = new Square[(BOARD_HEIGHT * BOARD_WIDTH) + 1];

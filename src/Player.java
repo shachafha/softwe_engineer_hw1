@@ -4,9 +4,11 @@ public class Player {
     private int location;
 
     /**
-     * Player constructor
-     * @param name player's name.
-     * @param color the game piece color of the player
+     * Player constructor, sets the name and the color of game piece.
+     * Sets the player's location to 1 (the first square on board).
+     *
+     * @param name  player's name.
+     * @param color the game piece color of the player.
      */
     public Player(String name, Color color) {
         this.name = name;
@@ -23,10 +25,16 @@ public class Player {
         return playerGamePiece;
     }
 
+    /**
+     * @return the location of the player on the board.
+     */
     public int getLocation() {
         return location;
     }
 
+    /**
+     * Set the location of the player on the board.
+     */
     public void setLocation(int location) {
         this.location = location;
     }
